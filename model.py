@@ -6,7 +6,7 @@ from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Load the dataset
-aqi_df = pd.read_csv('../AirQuality/Air_quality_index.csv')
+aqi_df = pd.read_csv('Air_quality_index.csv')
 
 # Handle missing values (for simplicity, we will drop them)
 aqi_df = aqi_df.dropna()
