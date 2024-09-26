@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 
 app = Flask(__name__)
 
-aqi_df = pd.read_csv('../AirQuality/Air_quality_index.csv')
+aqi_df = pd.read_csv('Air_quality_index.csv')
 
 aqi_df = aqi_df.dropna()
 
@@ -78,7 +78,7 @@ def predict():
     final_features = np.array([[avg_pollutant_min, avg_pollutant_max, avg_pollutant_avg]])
 
     try:
-        model = pickle.load(open('../AirQuality/aqi_model.pkl', 'rb'))
+        model = pickle.load(open('aqi_model.pkl', 'rb'))
         prediction = model.predict(final_features)
     except Exception as e:
         return render_template('index2.html', state_city_dict=state_city_dict, selected_state=state, selected_city=city,
